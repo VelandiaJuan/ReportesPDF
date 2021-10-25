@@ -1,1 +1,431 @@
-[]
+[
+    {
+        "id": "274363e56f2b0712",
+        "type": "tab",
+        "label": "Reporte",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f1160cd748d33bd9",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "da23ca533f39421f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "da23ca533f39421f",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "62c6a3de60d7ada4",
+        "type": "inject",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "24ca23935526f772",
+                "8ecfcd63ad8fd7c1",
+                "58ca0fcb400675e7"
+            ]
+        ]
+    },
+    {
+        "id": "24ca23935526f772",
+        "type": "file in",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "filename": "node_modules/swcpro-images/hlogo.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "bfd857e7e252dd9e"
+            ]
+        ]
+    },
+    {
+        "id": "b3b2034a985f88ae",
+        "type": "template",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"produccion\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroCasing\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"diametroBomba\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n\n        }\n    ]\n}",
+        "output": "json",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf83015972d35cbe",
+        "type": "file",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "filename": "Desktop\\test2.pdf",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "af1f7b7541825dec"
+            ]
+        ]
+    },
+    {
+        "id": "21cc3bbeb5911a0e",
+        "type": "pdfmake",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "outputType": "Buffer",
+        "inputProperty": "payload",
+        "options": "{}",
+        "outputProperty": "payload",
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "bf83015972d35cbe"
+            ]
+        ]
+    },
+    {
+        "id": "d8afc6642d068292",
+        "type": "function",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "func": "var produccion =global.get('DataProduccion.produccion')||0;\nvar diametroBomba =global.get('DataProduccion.diametroBomba')||0;\nvar longitudEmbolo =global.get('DataProduccion.longitudEmbolo')||0;\nvar gravedadFluido =global.get('DataProduccion.gravedadFluido')||0;\nvar nivelLiquidoDinamico =global.get('DataProduccion.nivelLiquidoDinamico')||0;\nvar longitudStroke =global.get('DataProduccion.longitudStroke')||0;\nvar constanteAmortiguamiento =global.get('DataProduccion.constanteAmortiguamiento')||0;\nvar api =global.get('DataProduccion.api')||0;\n\nvar TRS =flow.get('TRS','memoryOnly')||0;\nvar bull =flow.get('bull','memoryOnly')||0;\n\nvar DiametroCasing=global.get('DataInstalation.DiametroCasing')||0;\nvar DiametroTubing=global.get('DataInstalation.DiametroTubing')||0;\nvar ProfundidadVarilla=global.get('DataInstalation.ProfundidadVarilla')||0;\nvar PresionCasing=global.get('DataInstalation.PresionCasing')||0;\nvar PresionTubing=global.get('DataInstalation.PresionTubing')||0;\n\n\n\nmsg.produccion=produccion;\nmsg.diametroBomba=diametroBomba;\nmsg.longitudEmbolo=longitudEmbolo;\nmsg.gravedadFluido=gravedadFluido;\nmsg.nivelLiquidoDinamico=nivelLiquidoDinamico;\nmsg.longitudStroke=longitudStroke;\nmsg.constanteAmortiguamiento=constanteAmortiguamiento;\nmsg.api=api;\nmsg.bull=bull;\nmsg.TRS=TRS;\nmsg.DiametroCasing=DiametroCasing;\nmsg.DiametroTubing=DiametroTubing;\nmsg.ProfundidadVarilla=ProfundidadVarilla;\nmsg.PresionCasing=PresionCasing;\nmsg.PresionTubing=PresionTubing;\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 80,
+        "y": 300,
+        "wires": [
+            [
+                "bac0b2318e5d8416"
+            ]
+        ]
+    },
+    {
+        "id": "8ecfcd63ad8fd7c1",
+        "type": "file in",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "filename": "node_modules/swcpro-images/trc-suckerrod-logo.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "3c6322369658469d"
+            ]
+        ]
+    },
+    {
+        "id": "52db798a99f5e2e8",
+        "type": "debug",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c3c7e43e8b854b24",
+        "type": "debug",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload1",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a370697ba1e1986c",
+        "type": "change",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::bull",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbb16725167b760e",
+        "type": "change",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::TRS",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58ca0fcb400675e7",
+        "type": "file in",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "filename": "node_modules/swcpro-images/bull.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "fd7084fba99ad083"
+            ]
+        ]
+    },
+    {
+        "id": "bfd857e7e252dd9e",
+        "type": "base64",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 760,
+        "y": 240,
+        "wires": [
+            [
+                "d8afc6642d068292"
+            ]
+        ]
+    },
+    {
+        "id": "3c6322369658469d",
+        "type": "base64",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "52db798a99f5e2e8",
+                "bbb16725167b760e"
+            ]
+        ]
+    },
+    {
+        "id": "fd7084fba99ad083",
+        "type": "base64",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "c3c7e43e8b854b24",
+                "a370697ba1e1986c"
+            ]
+        ]
+    },
+    {
+        "id": "190fdf4a168efb15",
+        "type": "ui_toast",
+        "z": "274363e56f2b0712",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 960,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "af1f7b7541825dec",
+        "type": "change",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Created Report",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Report",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 380,
+        "wires": [
+            [
+                "190fdf4a168efb15",
+                "130780b77668e665"
+            ]
+        ]
+    },
+    {
+        "id": "5246e05525f5e4c0",
+        "type": "ui_led",
+        "z": "274363e56f2b0712",
+        "order": 0,
+        "group": "f1160cd748d33bd9",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 420,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "bac0b2318e5d8416",
+        "type": "template",
+        "z": "274363e56f2b0712",
+        "name": "CreaciónDocumento",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"Production\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"Casing Diameter\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"Pump Diameter\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n        }\n    ]\n}",
+        "output": "json",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "21cc3bbeb5911a0e"
+            ]
+        ]
+    },
+    {
+        "id": "130780b77668e665",
+        "type": "debug",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 950,
+        "y": 420,
+        "wires": []
+    }
+]
