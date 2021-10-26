@@ -27,6 +27,102 @@
         "hidden": false
     },
     {
+        "id": "a93e77c54ced9dd7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
         "id": "62c6a3de60d7ada4",
         "type": "inject",
         "z": "274363e56f2b0712",
@@ -401,7 +497,7 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "mustache",
-        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"Production\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"Casing Diameter\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"Pump Diameter\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n        }\n    ]\n}",
+        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"Production\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"Casing Diameter\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"Pump Diameter\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n        },\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Production\",\"Pump Diameter\",\"length Plunger\"],\n                        [\"{{produccion}}\",\"{{diametroBomba}}\",\"{{longitudEmbolo}}\"]\n                ]\n\n            }\n        }\n    ]\n}",
         "output": "json",
         "x": 280,
         "y": 360,
