@@ -134,13 +134,15 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 240,
+        "x": 260,
+        "y": 280,
         "wires": [
             [
                 "24ca23935526f772",
                 "8ecfcd63ad8fd7c1",
-                "58ca0fcb400675e7"
+                "58ca0fcb400675e7",
+                "9e78c567764b2353",
+                "e13acfaa74353ba3"
             ]
         ]
     },
@@ -155,8 +157,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 400,
-        "y": 240,
+        "x": 560,
+        "y": 440,
         "wires": [
             [
                 "bfd857e7e252dd9e"
@@ -174,8 +176,8 @@
         "syntax": "mustache",
         "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"produccion\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroCasing\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"diametroBomba\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n\n        }\n    ]\n}",
         "output": "json",
-        "x": 260,
-        "y": 300,
+        "x": 680,
+        "y": 600,
         "wires": [
             []
         ]
@@ -190,8 +192,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 630,
-        "y": 300,
+        "x": 790,
+        "y": 500,
         "wires": [
             [
                 "af1f7b7541825dec"
@@ -207,8 +209,8 @@
         "inputProperty": "payload",
         "options": "{}",
         "outputProperty": "payload",
-        "x": 460,
-        "y": 300,
+        "x": 620,
+        "y": 500,
         "wires": [
             [
                 "bf83015972d35cbe"
@@ -219,15 +221,15 @@
         "id": "d8afc6642d068292",
         "type": "function",
         "z": "274363e56f2b0712",
-        "name": "",
-        "func": "var produccion =global.get('DataProduccion.produccion')||0;\nvar diametroBomba =global.get('DataProduccion.diametroBomba')||0;\nvar longitudEmbolo =global.get('DataProduccion.longitudEmbolo')||0;\nvar gravedadFluido =global.get('DataProduccion.gravedadFluido')||0;\nvar nivelLiquidoDinamico =global.get('DataProduccion.nivelLiquidoDinamico')||0;\nvar longitudStroke =global.get('DataProduccion.longitudStroke')||0;\nvar constanteAmortiguamiento =global.get('DataProduccion.constanteAmortiguamiento')||0;\nvar api =global.get('DataProduccion.api')||0;\n\nvar TRS =flow.get('TRS','memoryOnly')||0;\nvar bull =flow.get('bull','memoryOnly')||0;\n\nvar DiametroCasing=global.get('DataInstalation.DiametroCasing')||0;\nvar DiametroTubing=global.get('DataInstalation.DiametroTubing')||0;\nvar ProfundidadVarilla=global.get('DataInstalation.ProfundidadVarilla')||0;\nvar PresionCasing=global.get('DataInstalation.PresionCasing')||0;\nvar PresionTubing=global.get('DataInstalation.PresionTubing')||0;\n\n\n\nmsg.produccion=produccion;\nmsg.diametroBomba=diametroBomba;\nmsg.longitudEmbolo=longitudEmbolo;\nmsg.gravedadFluido=gravedadFluido;\nmsg.nivelLiquidoDinamico=nivelLiquidoDinamico;\nmsg.longitudStroke=longitudStroke;\nmsg.constanteAmortiguamiento=constanteAmortiguamiento;\nmsg.api=api;\nmsg.bull=bull;\nmsg.TRS=TRS;\nmsg.DiametroCasing=DiametroCasing;\nmsg.DiametroTubing=DiametroTubing;\nmsg.ProfundidadVarilla=ProfundidadVarilla;\nmsg.PresionCasing=PresionCasing;\nmsg.PresionTubing=PresionTubing;\n\n\n\n\nreturn msg;",
+        "name": "AdquisionDataReporte",
+        "func": "var produccion =global.get('DataProduccion.produccion')||0;\nvar diametroBomba =global.get('DataProduccion.diametroBomba')||0;\nvar longitudEmbolo =global.get('DataProduccion.longitudEmbolo')||0;\nvar gravedadFluido =global.get('DataProduccion.gravedadFluido')||0;\nvar nivelLiquidoDinamico =global.get('DataProduccion.nivelLiquidoDinamico')||0;\nvar longitudStroke =global.get('DataProduccion.longitudStroke')||0;\nvar constanteAmortiguamiento =global.get('DataProduccion.constanteAmortiguamiento')||0;\nvar api =global.get('DataProduccion.api')||0;\n\n// imagenes\nvar TRS =flow.get('TRS','memoryOnly')||0;\nvar bull =flow.get('bull','memoryOnly')||0;\nvar downhole = flow.get('downhole','memoryOnly')||0;\nvar surface = flow.get('surface','memoryOnly')||0;\n\nvar DiametroCasing=global.get('DataInstalation.DiametroCasing')||0;\nvar DiametroTubing=global.get('DataInstalation.DiametroTubing')||0;\nvar ProfundidadVarilla=global.get('DataInstalation.ProfundidadVarilla')||0;\nvar PresionCasing=global.get('DataInstalation.PresionCasing')||0;\nvar PresionTubing=global.get('DataInstalation.PresionTubing')||0;\n\n// Datos de Unidad de Bombeo\nvar inclinacionMax = global.get('DataUnidadBombeo.inclinacionMax')||0;\nvar desplazamiento = global.get('DataUnidadBombeo.desplazamiento')||0;\nvar inclinacionMin = global.get('DataUnidadBombeo.inclinacionMin')||0;\nvar torqueMax = global.get('DataUnidadBombeo.torqueMax')||0;\nvar balanceEstructura = global.get('DataUnidadBombeo.balanceEstructura')||0;\nvar relacionCaja = global.get('DataUnidadBombeo.relacionCaja')||0;\n\n\n// valores de geometria sucket\nvar brand = global.get('GeometriaSucket.brand')||0;\nvar code = global.get('GeometriaSucket.code')||0;\nvar A = global.get('GeometriaSucket.A')||0;\nvar C = global.get('GeometriaSucket.C')||0;\nvar I = global.get('GeometriaSucket.I')||0;\nvar R = global.get('GeometriaSucket.R')||0;\nvar P = global.get('GeometriaSucket.P')||0;\nvar G = global.get('GeometriaSucket.G')||0;\nvar H = global.get('GeometriaSucket.H')||0;\n\n\n//retornar los valores para crear el PDF\nmsg.produccion=produccion;\nmsg.diametroBomba=diametroBomba;\nmsg.longitudEmbolo=longitudEmbolo;\nmsg.gravedadFluido=gravedadFluido;\nmsg.nivelLiquidoDinamico=nivelLiquidoDinamico;\nmsg.longitudStroke=longitudStroke;\nmsg.constanteAmortiguamiento=constanteAmortiguamiento;\nmsg.api=api;\n// imagenes\nmsg.bull=bull;\nmsg.TRS=TRS;\nmsg.downhole = downhole;\nmsg.surface = surface;\n\n//Datos Operacion\nmsg.DiametroCasing=DiametroCasing;\nmsg.DiametroTubing=DiametroTubing;\nmsg.ProfundidadVarilla=ProfundidadVarilla;\nmsg.PresionCasing=PresionCasing;\nmsg.PresionTubing=PresionTubing;\n\n// retornar los valores de unidad de bombeo\nmsg.inclinacionMax = inclinacionMax;\nmsg.desplazamiento = desplazamiento;\nmsg.inclinacionMin = inclinacionMin;\nmsg.torqueMax = torqueMax;\nmsg.balanceEstructura = balanceEstructura;\nmsg.relacionCaja = relacionCaja;\n\n\n// retornar valores de la geometria\nmsg.brand = brand;\nmsg.code = code;\nmsg.A = A;\nmsg.C = C;\nmsg.I = I;\nmsg.R = R;\nmsg.P = P;\nmsg.G = G;\nmsg.H = H;\n\n// Valores adquiridos Vigilancia\n// vigilancia unidad de bombeo\ncontext.set(\"DataUnidadBombeo.inclinacionMax\", inclinacionMax,\"memoryOnly\");\ncontext.set(\"DataUnidadBombeo.desplazamiento\", desplazamiento,\"memoryOnly\");\ncontext.set(\"DataUnidadBombeo.inclinacionMin\", inclinacionMin,\"memoryOnly\");\ncontext.set(\"DataUnidadBombeo.torqueMax\", torqueMax,\"memoryOnly\");\ncontext.set(\"DataUnidadBombeo.balanceEstructura\", balanceEstructura,\"memoryOnly\");\ncontext.set(\"DataUnidadBombeo.relacionCaja\", relacionCaja,\"memoryOnly\");\n\n// vigilancia geometria\ncontext.set(\"GeometriaSucket.brand\", brand,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.A\", A,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.C\", C,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.I\", I,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.R\", R,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.P\", P,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.G\", G,\"memoryOnly\");\ncontext.set(\"GeometriaSucket.H\", H,\"memoryOnly\");\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 80,
-        "y": 300,
+        "x": 280,
+        "y": 500,
         "wires": [
             [
                 "bac0b2318e5d8416"
@@ -245,8 +247,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 440,
-        "y": 180,
+        "x": 600,
+        "y": 380,
         "wires": [
             [
                 "3c6322369658469d"
@@ -266,8 +268,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1080,
-        "y": 200,
+        "x": 1240,
+        "y": 400,
         "wires": []
     },
     {
@@ -283,8 +285,8 @@
         "targetType": "msg",
         "statusVal": "payload1",
         "statusType": "auto",
-        "x": 1070,
-        "y": 140,
+        "x": 1230,
+        "y": 340,
         "wires": []
     },
     {
@@ -306,8 +308,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
-        "y": 300,
+        "x": 1300,
+        "y": 500,
         "wires": [
             []
         ]
@@ -331,8 +333,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1150,
-        "y": 340,
+        "x": 1310,
+        "y": 540,
         "wires": [
             []
         ]
@@ -348,8 +350,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 390,
-        "y": 140,
+        "x": 550,
+        "y": 340,
         "wires": [
             [
                 "fd7084fba99ad083"
@@ -363,8 +365,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 760,
-        "y": 240,
+        "x": 920,
+        "y": 440,
         "wires": [
             [
                 "d8afc6642d068292"
@@ -378,8 +380,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 880,
-        "y": 180,
+        "x": 1040,
+        "y": 380,
         "wires": [
             [
                 "52db798a99f5e2e8",
@@ -394,8 +396,8 @@
         "name": "",
         "action": "str",
         "property": "payload",
-        "x": 880,
-        "y": 140,
+        "x": 1040,
+        "y": 340,
         "wires": [
             [
                 "c3c7e43e8b854b24",
@@ -418,8 +420,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 960,
-        "y": 380,
+        "x": 1120,
+        "y": 580,
         "wires": []
     },
     {
@@ -448,45 +450,14 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
-        "y": 380,
+        "x": 900,
+        "y": 580,
         "wires": [
             [
                 "190fdf4a168efb15",
                 "130780b77668e665"
             ]
         ]
-    },
-    {
-        "id": "5246e05525f5e4c0",
-        "type": "ui_led",
-        "z": "274363e56f2b0712",
-        "order": 0,
-        "group": "f1160cd748d33bd9",
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "false",
-                "valueType": "bool"
-            },
-            {
-                "color": "#008000",
-                "value": "true",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "",
-        "x": 420,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "bac0b2318e5d8416",
@@ -497,10 +468,10 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "mustache",
-        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"Production\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"Casing Diameter\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"Pump Diameter\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n        },\n        \"Well properties\",\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Production\",\"Pump Diameter\",\"length Plunger\",\"Fluid Gravity\",\"Dynamic Liquid level \"],\n                        [\"{{produccion}}\",\"{{diametroBomba}}\",\"{{longitudEmbolo}}\",\"{{gravedadFluido}}\",\"{{nivelLiquidoDinamico}}\"],\n                        [\"Stroke Length[ft]\",\"Constant Damping \",\"API\",\"Casing Diameter\",\"Tubing Diameter\"],\n                        [\"{{longitudStroke}}\",\"{{constanteAmortiguamiento }}\",\"{{api}}\",\"{{DiametroCasing}}\",\"{{DiametroTubing }}\"],\n                        [\"Rod Depth [ft]\",\"Casing Pressure[psi]\",\"Tubing Pressure\",\"\",\"\"],\n                        [\"{{ProfundidadVarilla}}\",\"{{PresionCasing}}\",\"{{PresionTubing}}\",\"\",\"\"]\n                ]\n\n            }\n        },\n        \"tapper Configuration\",\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Production\",\"Pump Diameter\",\"length Plunger\",\"Fluid Gravity\",\"Dynamic Liquid level \"],\n                        [\"{{produccion}}\",\"{{diametroBomba}}\",\"{{longitudEmbolo}}\",\"{{gravedadFluido}}\",\"{{nivelLiquidoDinamico}}\"],\n                        [\"Stroke Length[ft]\",\"Constant Damping \",\"API\",\"Casing Diameter\",\"Tubing Diameter\"],\n                        [\"{{longitudStroke}}\",\"{{constanteAmortiguamiento }}\",\"{{api}}\",\"{{DiametroCasing}}\",\"{{DiametroTubing }}\"],\n                        [\"Rod Depth [ft]\",\"Casing Pressure[psi]\",\"Tubing Pressure\",\"\",\"\"],\n                        [\"{{ProfundidadVarilla}}\",\"{{PresionCasing}}\",\"{{PresionTubing}}\",\"\",\"\"]\n                ]\n\n            }\n        }\n    ]\n}",
+        "template": "{\n    \"pageSize\": \"A4\",\n    \"pageOrientation\": \"portrait\",\n    \"pageMargins\": [\n        40,\n        60,\n        40,\n        60\n    ],\n    \"info\": {\n        \"title\": \"awesome Document\",\n        \"author\": \"Juan Pablo Velandia && Angel Vargas\",\n        \"subject\": \"subject of document\",\n        \"keywords\": \"keywords for document\"\n    },\n    \"background\": {\n        \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n        \"opacity\": 0.1,\n        \"width\": 420,\n        \"absolutePosition\": {\n            \"x\": 100,\n            \"y\": 100\n        }\n    },\n    \"header\": {\n        \"columns\": [\n            {\n                \"image\": \"data:image/jpeg;base64,{{{bull}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 20,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{payload}}}\",\n                \"width\": 50,\n                \"absolutePosition\": {\n                    \"x\": 300,\n                    \"y\": 20\n                }\n            },\n            {\n                \"image\": \"data:image/jpeg;base64,{{{TRS}}}\",\n                \"width\": 100,\n                \"absolutePosition\": {\n                    \"x\": 480,\n                    \"y\": 20\n                }\n            }\n        ]\n    },\n    \"footer\": {\n        \"columns\": [\n            \"Left part\",\n            {\n                \"text\": \"Right part\",\n                \"alignment\": \"right\"\n            }\n        ]\n    },\n    \"content\": [\n        \"Data Information\",\n        {\n            \"layout\": \"noBorders\",\n            \"table\": {\n                \"headerRows\": 1,\n                \"display\": \"inline\",\n                \"body\": [\n                    [\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        \"                     \",\n                        \"                     \",\n                        {\n                            \"text\": \"Data\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        },\n                        {\n                            \"text\": \"Value\",\n                            \"bold\": true,\n                            \"fillOpacity\": 0.3,\n                            \"fillColor\": \"gray\"\n                        }\n                    ],\n                    [\n                        \"Production\",\n                        \"{{produccion}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"Casing Diameter\",\n                        \"{{DiametroCasing}}\"\n                    ],\n                    [\n                        \"Pump Diameter\",\n                        \"{{diametroBomba}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"DiametroTubing\",\n                        \"{{DiametroTubing}}\"\n                    ],\n                    [\n                        \"longitudEmbolo\",\n                        \"{{longitudEmbolo}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"ProfundidadVarilla\",\n                        \"{{ProfundidadVarilla}}\"\n                    ],\n                    [\n                        \"gravedadFluido\",\n                        \"{{gravedadFluido}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionCasing\",\n                        \"{{PresionCasing}}\"\n                    ],\n                    [\n                        \"nivelLiquidoDinamico\",\n                        \"{{nivelLiquidoDinamico}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"PresionTubing\",\n                        \"{{PresionTubing}}\"\n                    ],\n                    [\n                        \"longitudStroke\",\n                        \"{{longitudStroke}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"constanteAmortiguamiento\",\n                        \"{{constanteAmortiguamiento}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ],\n                    [\n                        \"api\",\n                        \"{{api}}\",\n                        \"                     \",\n                        \"                     \",\n                        \"\",\n                        \"\"\n                    ]\n                ]\n            }\n        },\n        \" \",\n        \"Well properties\",\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Production\",\"Pump Diameter\",\"length Plunger\",\"Fluid Gravity\",\"Dynamic Liquid level \"],\n                        [\"{{produccion}}\",\"{{diametroBomba}}\",\"{{longitudEmbolo}}\",\"{{gravedadFluido}}\",\"{{nivelLiquidoDinamico}}\"],\n                        [\"Stroke Length[ft]\",\"Constant Damping \",\"API\",\"Casing Diameter\",\"Tubing Diameter\"],\n                        [\"{{longitudStroke}}\",\"{{constanteAmortiguamiento }}\",\"{{api}}\",\"{{DiametroCasing}}\",\"{{DiametroTubing }}\"],\n                        [\"Rod Depth [ft]\",\"Casing Pressure[psi]\",\"Tubing Pressure\",\"\",\"\"],\n                        [\"{{ProfundidadVarilla}}\",\"{{PresionCasing}}\",\"{{PresionTubing}}\",\"\",\"\"]\n                ]\n\n            }\n        },\n        \" \",\n        \"Taper Configuration\",\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Production\",\"Pump Diameter\",\"length Plunger\",\"Fluid Gravity\",\"Dynamic Liquid level \"],\n                        [\"{{produccion}}\",\"{{diametroBomba}}\",\"{{longitudEmbolo}}\",\"{{gravedadFluido}}\",\"{{nivelLiquidoDinamico}}\"],\n                        [\"Stroke Length[ft]\",\"Constant Damping \",\"API\",\"Casing Diameter\",\"Tubing Diameter\"],\n                        [\"{{longitudStroke}}\",\"{{constanteAmortiguamiento }}\",\"{{api}}\",\"{{DiametroCasing}}\",\"{{DiametroTubing }}\"],\n                        [\"Rod Depth [ft]\",\"Casing Pressure[psi]\",\"Tubing Pressure\",\"\",\"\"],\n                        [\"{{ProfundidadVarilla}}\",\"{{PresionCasing}}\",\"{{PresionTubing}}\",\"\",\"\"]\n                ]\n\n            }\n        },\n        \" \",\n        \"Pumping Unit\",\n        {\n            \"table\":{\n                \"body\":[\n                    [\"Max Inclination\",\"Displacement\",\"Min Inclination\",\"Torque Max\",\"Balance Sheet Structure\",\"Box Ratio\"],\n                    [\"{{inclinacionMax}}\",\"{{desplazamiento}}\",\"{{inclinacionMin}}\",\"{{torqueMax}}\",\"{{balanceEstructura}}\",\"{{relacionCaja}}\"]\n                ]\n            }\n        },\n        \" \",\n        \"Geometry Configuration\",\n        {\n            \"table\":{\n                \"body\":[\n                        [\"Brand\",\"Code\",\"A [in]\",\"C\",\"I\",\"R\",\"P\",\"G\",\"H\"],\n                        [\"{{brand}}\",\"{{code}}\",\"{{A}}\",\"{{C}}\",\"{{I}}\",\"{{R}}\",\"{{P}}\",\"{{G}}\",\"{{H}}\"]\n                ]\n\n            }\n        },\n        {\n            \"image\": \"data:image/jpeg;base64,{{{surface}}}\",\n            \"width\": 480,\n            \"height\": 450\n        },\n        {\n            \"image\": \"data:image/jpeg;base64,{{{downhole}}}\",\n            \"width\": 480,\n            \"height\": 450\n        }\n    ]\n}",
         "output": "json",
-        "x": 280,
-        "y": 360,
+        "x": 480,
+        "y": 560,
         "wires": [
             [
                 "21cc3bbeb5911a0e"
@@ -520,8 +491,126 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 950,
-        "y": 420,
+        "x": 1110,
+        "y": 620,
         "wires": []
+    },
+    {
+        "id": "9e78c567764b2353",
+        "type": "file in",
+        "z": "274363e56f2b0712",
+        "name": "Downholegas",
+        "filename": "node_modules/SocketRodPoint/Dinagramas/Fondo/gas.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "21979feea0f2e56f"
+            ]
+        ]
+    },
+    {
+        "id": "21979feea0f2e56f",
+        "type": "base64",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 840,
+        "y": 120,
+        "wires": [
+            [
+                "2cdf68d57b8b69b3"
+            ]
+        ]
+    },
+    {
+        "id": "2cdf68d57b8b69b3",
+        "type": "change",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::downhole",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38640e6851e4eb27",
+        "type": "change",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::surface",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84ce2df0361db2b8",
+        "type": "base64",
+        "z": "274363e56f2b0712",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 840,
+        "y": 240,
+        "wires": [
+            [
+                "38640e6851e4eb27"
+            ]
+        ]
+    },
+    {
+        "id": "e13acfaa74353ba3",
+        "type": "file in",
+        "z": "274363e56f2b0712",
+        "name": "surfacegas",
+        "filename": "node_modules/SocketRodPoint/Dinagramas/Superficie/gas.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 650,
+        "y": 240,
+        "wires": [
+            [
+                "84ce2df0361db2b8"
+            ]
+        ]
     }
 ]
